@@ -1,9 +1,13 @@
+function wlRegionalMapTest(region) {
+ console.log("Region is " + region);
+}
+
 jQuery(document).ready(function () {
         if (window.mapInited) return;
         window.mapInited = 1;
         jQuery(".nor-map path").click(function(){
-            var mainmap = jQuery(this).closest('.main-map');
-            var action = mainmap.data('action');
+            var topdiv = jQuery(this).closest('.nor-map');
+            var action = topdiv.data('action');
             if(jQuery(this).data("url")){
                 if (action) {
                     var url = jQuery(this).data('url');
@@ -18,6 +22,7 @@ jQuery(document).ready(function () {
                 }
             }
             var targetMap = jQuery(this).data("target");
+            var mainmap = jQuery(this).closest('.main-map');
             if(targetMap){
                 mainmap.fadeOut(400,function(){
                 jQuery("#"+targetMap).fadeIn();
@@ -26,7 +31,7 @@ jQuery(document).ready(function () {
         });
 
         jQuery(".sub-map .bt-back").click(function(){
-            var mainmap = jQuery(this).closest('.nor-map').find('.main-map'.find('.main-map'));
+            var mainmap = jQuery(this).closest('.nor-map').find('.main-map');
             console.log("This %j", mainmap);
             jQuery(this).parent(".sub-map").fadeOut(400,function(){
                 mainmap.fadeIn();

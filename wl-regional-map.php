@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WL Regional Map
-Description: Display a map of a norwegian region using a shortcode [wl-regional-map region=<name>]
+Description: Display a map of a norwegian region using a shortcode [wl-regional-map region=<name> {action=<js-function-name>}]
 Author: wphostingdev, webloeft,iverok
 Author URI: https://www.webloeft.no
 Version: 1.0
